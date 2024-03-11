@@ -9,7 +9,7 @@ namespace TournamentTable
     {
         public int GreaterThan(ITableEntry leftTableEntry, ITableEntry rightTableEntry)
         {
-            return leftTableEntry.Team!.Name.CompareTo(rightTableEntry.Team!.Name);
+            return leftTableEntry.Points.CompareTo(rightTableEntry.Points);
         }
     }
 }
