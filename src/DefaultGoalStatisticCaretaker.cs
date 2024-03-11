@@ -9,7 +9,8 @@ namespace TournamentTable
     {
         public void MaintainGoalStatistic(ITableEntry tableEntry, int scoredGoals, int takenGoals)
         {
-            // TODO: this method should add the scored and taken goals to the table entry
+            tableEntry.AddGoalsScored(scoredGoals);
+            tableEntry.AddGoalsAgainst(takenGoals);
         }
     }
 }
