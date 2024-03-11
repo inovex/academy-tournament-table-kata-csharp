@@ -9,7 +9,20 @@ namespace TournamentTable
     {
         public int GreaterThan(ITableEntry leftTableEntry, ITableEntry rightTableEntry)
         {
-            return leftTableEntry.Points.CompareTo(rightTableEntry.Points);
+            var leftGoalDifference = CalculateGoalDifference(leftTableEntry);
+            var rightGoalDifference = CalculateGoalDifference(rightTableEntry);
+
+            if (leftGoalDifference == rightGoalDifference)
+            {
+                return leftTableEntry.Points.CompareTo(rightTableEntry.Points);
+            }
+
+            return leftGoalDifference.CompareTo(rightGoalDifference);
+        }
+
+        private static int CalculateGoalDifference(ITableEntry tableEntry)
+        {
+            return tableEntry.GoalsScored - tableEntry.GoalsAgainst;
         }
     }
 }
