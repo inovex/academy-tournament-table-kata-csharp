@@ -7,12 +7,31 @@ namespace TournamentTable
 
     public class DefaultPointDistributionBehavior : IPointDistributionBehavior
     {
+        private const int pointsInCaseOfDraw = 1;
+        private const int pointsInCaseOfWin = 3;
+
         public void AddPointsToTableEntries(ITableEntry homeTeamTableEntry, ITableEntry awayTeamTableEntry, GameResult gameResult)
         {
-            // TODO: this method should add points to the table entries depending on the
-            // game result
-        }
+            var winningTeam = gameResult.WinningTeam;
 
+            if (winningTeam == null)
+            {
+                homeTeamTableEntry.AddPoints(pointsInCaseOfDraw);
+                awayTeamTableEntry.AddPoints(pointsInCaseOfDraw);
+
+                return;
+            }
+
+            if (winningTeam == homeTeamTableEntry.Team)
+            {
+                homeTeamTableEntry.AddPoints(pointsInCaseOfWin);
+            }
+
+            if (winningTeam == awayTeamTableEntry.Team)
+            {
+                awayTeamTableEntry.AddPoints(pointsInCaseOfWin);
+            }
+        }
     }
 }
 
