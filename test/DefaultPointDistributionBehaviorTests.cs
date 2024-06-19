@@ -8,8 +8,7 @@ namespace TournamentTable.Test
         ITableEntry firstTeamTableEntry;
         ITableEntry secondTableEntry;
 
-        [SetUp]
-        public void Setup()
+        public DefaultPointDistributionBehaviorTests()
         {
             pointDistributionBehavior = new DefaultPointDistributionBehavior();
 
@@ -20,7 +19,7 @@ namespace TournamentTable.Test
             secondTableEntry = new TableEntry() { Team = changeSecondTeamName };
         }
 
-        [Test]
+        [Fact]
         public void WhatShouldITest()
         {
             // TODO

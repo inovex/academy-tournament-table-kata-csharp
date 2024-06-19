@@ -5,14 +5,13 @@ namespace TournamentTable.Test
         ITeam changeFirstTeamName;
         ITeam changeSecondTeamName;
 
-        [SetUp]
-        public void Setup()
+        public GameResultTests()
         {
             changeFirstTeamName = new Team("FirstTeam");
             changeSecondTeamName = new Team("SecondTeam");
         }
 
-        [Test]
+        [Fact]
         public void MySuperDuperTestName()
         {
             // TODO

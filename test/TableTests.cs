@@ -2,14 +2,14 @@ namespace TournamentTable.Test
 {
     public class TableTests
     {
-        [Test]
+        [Fact]
         public void Constructor_Default_CreatesEmptyTable()
         {
             var table = new Table();
 
             var tableList = table.GetTable();
 
-            Assert.That(tableList, Is.Empty);
+            Assert.Empty(tableList);
         }
     }
 }
