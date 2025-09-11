@@ -11,6 +11,7 @@ namespace TournamentTable
         {
             // TODO: this method should add points to the table entries depending on the
             // game result
+            throw new NotImplementedException();
         }
 
     }
